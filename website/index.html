@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jdmota.github.io</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, shrink-to-fit=no"
+    />
+  </head>
+  <body>
+    <a href="./utils/qrcode/index.html">QR Code Generator</a>
+    <script>
+      for (const anchor of document.querySelectorAll("a")) {
+        anchor.href = anchor.href.replace("/index.html", "/");
+      }
+    </script>
+  </body>
+</html>

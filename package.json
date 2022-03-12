@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "name": "jdmota.github.io",
+  "scripts": {
+    "parcel:dev": "parcel website/index.html --dist-dir=dist/dev --cache-dir .parcel-cache/dev --no-autoinstall",
+    "parcel:prod": "parcel build website/index.html --target=prod --cache-dir .parcel-cache/prod --no-autoinstall",
+    "serve": "sirv dist/prod",
+    "lint": "eslint website",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\""
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead, not ie 11",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "targets": {
+    "prod": {
+      "context": "browser",
+      "distDir": "dist/prod",
+      "sourceMap": false
+    }
+  },
+  "dependencies": {
+    "qrcode": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/qrcode": "^1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "parcel": "^2.3.2",
+    "postcss": "^8.4.8",
+    "prettier": "^2.5.1",
+    "sirv-cli": "^2.0.2",
+    "typescript": "^4.6.2"
+  },
+  "packageManager": "yarn@3.2.0"
+}

@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  margin: 24px;
+}
+
+.container * {
+  display: block;
+}
+
+#text {
+  width: calc(100% - 20px);
+  height: 32px;
+  margin: 16px 0;
+  padding: 8px;
+  font-size: inherit;
+}
+
+#generate, #download-png, #download-svg {
+  height: 48px;
+  margin: 8px 0;
+  font-size: inherit;
+}
+
+#generate {
+  width: 100%;
+}
+
+#download-png, #download-svg {
+  width: calc(50% - 16px);
+  float: left;
+}
+
+#download-png {
+  margin-right: 32px;
+}
+
+#result-buttons {
+  display: none;
+}
+
+#result svg {
+  margin: 8px auto;
+  max-height: 300px;
+}

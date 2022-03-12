@@ -1,2 +1,0 @@
-# jdmota.github.io
-
