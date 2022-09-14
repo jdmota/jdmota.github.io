@@ -1,18 +1,20 @@
-import qrcode from "qrcode";
+import qrcode, { type QRCodeRenderersOptions } from "qrcode";
 
-const qrCodeOptions = {
+const qrCodeOptions: QRCodeRenderersOptions = {
   margin: 1,
-  scale: 16,
+  width: 1000,
+  color: { dark: "#1A1A1A" },
 };
 
 const elems = {
   text: document.getElementById("text") as HTMLInputElement,
+  errorLevel: document.getElementById("error-level") as HTMLSelectElement,
   generateButton: document.getElementById("generate") as HTMLButtonElement,
   downloadPng: document.getElementById("download-png") as HTMLButtonElement,
   downloadSvg: document.getElementById("download-svg") as HTMLButtonElement,
   resultButtons: document.getElementById("result-buttons") as HTMLDivElement,
   result: document.getElementById("result") as HTMLDivElement,
-};
+} as const;
 
 elems.generateButton.addEventListener("click", () => generate());
 
@@ -36,9 +38,19 @@ async function generate() {
 
   try {
     const text = elems.text.value.trim();
+    const errorCorrectionLevel = elems.errorLevel
+      .value as QRCodeRenderersOptions["errorCorrectionLevel"];
     const [svg, png] = await Promise.all([
-      qrcode.toString(text, { type: "svg", ...qrCodeOptions }),
-      qrcode.toDataURL(text, { type: "image/png", ...qrCodeOptions }),
+      qrcode.toString(text, {
+        type: "svg",
+        ...qrCodeOptions,
+        errorCorrectionLevel,
+      }),
+      qrcode.toDataURL(text, {
+        type: "image/png",
+        ...qrCodeOptions,
+        errorCorrectionLevel,
+      }),
     ]);
 
     elems.result.innerHTML = svg;

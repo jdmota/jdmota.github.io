@@ -24,6 +24,20 @@ body {
   font-size: inherit;
 }
 
+#label-error-level {
+  width: 200px;
+  float: left;
+  line-height: 32px;
+  margin: 12px;
+}
+
+#error-level {
+  width: calc(100% - 224px);
+  margin: 16px 0;
+  padding: 16px;
+  font-size: inherit;
+}
+
 #generate, #download-png, #download-svg {
   height: 48px;
   margin: 8px 0;
