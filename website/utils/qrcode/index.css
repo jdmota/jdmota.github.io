@@ -61,7 +61,7 @@ body {
   display: none;
 }
 
-#result svg {
+#result svg, #result img {
   margin: 8px auto;
   max-width: 300px;
   max-height: 300px;

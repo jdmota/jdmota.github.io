@@ -53,7 +53,8 @@ async function generate() {
       }),
     ]);
 
-    elems.result.innerHTML = svg;
+    // elems.result.innerHTML = svg;
+    elems.result.innerHTML = `<img src="${png}" />`;
     elems.downloadPng.onclick = () => download(png, "png");
     elems.downloadSvg.onclick = () => download(svgToDataURL(svg), "svg");
     elems.resultButtons.style.display = "block";
