@@ -25,8 +25,8 @@ body {
 }
 
 #label-error-level {
-  width: 200px;
   float: left;
+  width: 200px;
   line-height: 32px;
   margin: 12px;
 }
@@ -35,6 +35,29 @@ body {
   width: calc(100% - 224px);
   margin: 16px 0;
   padding: 16px;
+  font-size: inherit;
+}
+
+#label-with-logo {
+  float: left;
+  width: 168px;
+  line-height: 32px;
+  margin: 26px 12px;
+}
+
+#with-logo {
+  float: left;
+  margin: 26px 0px;
+  width: 32px;
+  height: 32px;
+  font-size: inherit;
+}
+
+#logo-text {
+  width: calc(100% - 244px);
+  height: 32px;
+  margin: 16px 0;
+  padding: 8px;
   font-size: inherit;
 }
 

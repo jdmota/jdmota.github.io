@@ -1875,6 +1875,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"element-to-path@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "element-to-path@npm:1.2.1"
+  checksum: 4fd31aba15d44dcf2553904e04612c748ce0ef1c080481aee6e78f3cbb35b2c5d950ce05cbd0909667f64782654acdc538446254ad25c97f7974c388d87f3f5f
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -2591,6 +2598,7 @@ __metadata:
     "@types/qrcode": ^1.5.0
     "@typescript-eslint/eslint-plugin": ^5.37.0
     "@typescript-eslint/parser": ^5.37.0
+    element-to-path: ^1.2.1
     eslint: ^8.23.1
     eslint-config-prettier: ^8.5.0
     parcel: ^2.7.0
@@ -2598,6 +2606,7 @@ __metadata:
     prettier: ^2.7.1
     qrcode: ^1.5.1
     sirv-cli: ^2.0.2
+    svg-path-tools: ^1.0.0
     typescript: ^4.8.3
   languageName: unknown
   linkType: soft
@@ -3855,6 +3864,13 @@ __metadata:
   dependencies:
     has-flag: ^4.0.0
   checksum: 3dda818de06ebbe5b9653e07842d9479f3555ebc77e9a0280caf5a14fb877ffee9ed57007c3b78f5a6324b8dbeec648d9e97a24e2ed9fdb81ddc69ea07100f4a
+  languageName: node
+  linkType: hard
+
+"svg-path-tools@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "svg-path-tools@npm:1.0.0"
+  checksum: 8e44971bc160dbd459256a4ebcd05bbe80e2fed4824d6c58fd1a303da65982d0df62d3eec4198720f46077095ea1436537829b216d995e56ed8d50cb621029ea
   languageName: node
   linkType: hard
 

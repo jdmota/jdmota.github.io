@@ -12,13 +12,18 @@
   <body>
     <div class="container">
       <input id="text" type="text" placeholder="Enter text here!" />
-      <span id="label-error-level">Error Correction Level:</span>
+      <label id="label-error-level" for="error-level">Error Correction Level:</label>
       <select id="error-level">
         <option value="high">High</option>
         <option value="quartile">Quartile</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select>
+      <div class="clear"></div>
+      <input type="checkbox" id="with-logo">
+      <label id="label-with-logo" for="with-logo">With logo?</label>
+      <input id="logo-text" type="text" placeholder="Enter SVG code for logo here!" />
+      <div class="clear"></div>
       <button id="generate">Generate</button>
       <div id="result-buttons">
         <button id="download-png">Download PNG image</button>

@@ -37,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/qrcode", "npm:1.5.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:5.37.0"],\
             ["@typescript-eslint/parser", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:5.37.0"],\
+            ["element-to-path", "npm:1.2.1"],\
             ["eslint", "npm:8.23.1"],\
             ["eslint-config-prettier", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:8.5.0"],\
             ["parcel", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:2.7.0"],\
@@ -44,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["qrcode", "npm:1.5.1"],\
             ["sirv-cli", "npm:2.0.2"],\
+            ["svg-path-tools", "npm:1.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\
@@ -2395,6 +2397,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["element-to-path", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/element-to-path-npm-1.2.1-b246078b74-8.zip/node_modules/element-to-path/",\
+          "packageDependencies": [\
+            ["element-to-path", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["emoji-regex", [\
         ["npm:8.0.0", {\
           "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/emoji-regex-npm-8.0.0-213764015c-8.zip/node_modules/emoji-regex/",\
@@ -3244,6 +3255,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/qrcode", "npm:1.5.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:5.37.0"],\
             ["@typescript-eslint/parser", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:5.37.0"],\
+            ["element-to-path", "npm:1.2.1"],\
             ["eslint", "npm:8.23.1"],\
             ["eslint-config-prettier", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:8.5.0"],\
             ["parcel", "virtual:ce251f4c4f20cb1cabe26958abca38ab8c1065ab587330baf2b8c8718eeb573bbdb58f9b0688f86975301d85e60986ff6d4f3052392c8c038a74d1afff00568b#npm:2.7.0"],\
@@ -3251,6 +3263,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["qrcode", "npm:1.5.1"],\
             ["sirv-cli", "npm:2.0.2"],\
+            ["svg-path-tools", "npm:1.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\
@@ -4641,6 +4654,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["supports-color", "npm:7.2.0"],\
             ["has-flag", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg-path-tools", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/svg-path-tools-npm-1.0.0-6a4d1c9f30-8.zip/node_modules/svg-path-tools/",\
+          "packageDependencies": [\
+            ["svg-path-tools", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
