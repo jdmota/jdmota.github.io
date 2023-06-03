@@ -2,8 +2,8 @@
   "private": true,
   "name": "jdmota.github.io",
   "scripts": {
-    "parcel:dev": "parcel website/index.html --dist-dir=dist/dev --cache-dir .parcel-cache/dev --no-autoinstall",
-    "parcel:prod": "parcel build website/index.html --target=prod --cache-dir .parcel-cache/prod --no-autoinstall",
+    "parcel:dev": "parcel website/index.html --dist-dir=dist/dev --cache-dir .parcel-cache --no-autoinstall",
+    "parcel:prod": "parcel build website/index.html --target=prod --no-cache --no-autoinstall",
     "serve": "sirv dist/prod",
     "lint": "eslint website",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\""
