@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  & > div {
+    margin: 16px;
+  }
+}
+
+#import {
+  button {
+    padding: 10px;
+    font-size: inherit;
+    width: 100px;
+  }
+}
+
+#smart-split {
+  textarea {
+    font-size: inherit;
+    margin-top: 16px;
+    width: 500px;
+    height: 70px;
+  }
+}
+
+#formula {
+  & > div {
+    margin-top: 16px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: inherit;
+  }
+
+  .expression {
+    padding: 5px;
+    border: solid 1px #aaa;
+  }
+}
