@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Analyzer } from "./analyzer";
-import { limitStringLength, removeAllChildren } from "./utils";
+import { limitStringLength, printString, removeAllChildren } from "./utils";
 
 export type FormulaFunction = (
   check: (idx1: number, idx2: number) => boolean
@@ -96,7 +96,7 @@ export class Formula {
 
     for (const option of options) {
       const div = document.createElement("option");
-      div.innerText = limitStringLength(option || "------ empty ------");
+      div.innerText = limitStringLength(printString(option));
       this.elems.option.appendChild(div);
     }
 

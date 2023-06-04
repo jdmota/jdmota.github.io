@@ -146,7 +146,10 @@ export class Importer {
     if (this.multipleAnswers.has(questionIdx)) {
       const sep = ANSWER_SEP.find(sep => value.includes(sep));
       if (sep) {
-        return value.split(sep).map(s => s.trim());
+        return value
+          .split(sep)
+          .map(s => s.trim())
+          .filter(Boolean);
       }
       return [value.trim()];
     }
@@ -158,12 +161,14 @@ export class Importer {
       dynamicTyping: false,
       step: row => {
         if (this.processHeader) {
-          this.headerRow = row.data.map(s => s.trim());
+          this.headerRow = row.data.map(s => s.trim()).filter(Boolean);
           this.processMultipleAnswers();
           this.processHeader = false;
         } else {
           this.rows.push(
-            row.data.map((s, idx) => this.transformAnswer(idx, s))
+            row.data
+              .slice(0, this.headerRow.length)
+              .map((s, idx) => this.transformAnswer(idx, s))
           );
         }
         for (const error of row.errors) {

@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { FormulaFunction } from "./formula";
 import type { Data, Row } from "./importer";
-import { limitStringLength, removeAllChildren, toArray } from "./utils";
+import {
+  limitStringLength,
+  printString,
+  removeAllChildren,
+  toArray,
+} from "./utils";
 
 export class Analyzer {
   private readonly elems: {
@@ -106,7 +111,7 @@ export class Analyzer {
         const tr = document.createElement("tr");
         for (const answer of row) {
           const td = document.createElement("td");
-          td.innerText = toArray(answer).join("\n");
+          td.innerText = toArray(answer).map(printString).join("\n");
           tr.appendChild(td);
         }
         this.elems.tableBody.appendChild(tr);
@@ -126,7 +131,7 @@ export class Analyzer {
       for (const [answer, count] of answers) {
         const tr = document.createElement("tr");
         const td1 = document.createElement("td");
-        td1.innerText = answer;
+        td1.innerText = printString(answer);
         const td2 = document.createElement("td");
         td2.innerText = `${count} of ${filteredTotal} (${
           (count / filteredTotal) * 100

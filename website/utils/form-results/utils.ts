@@ -15,3 +15,10 @@ export function toArray<T extends string | number>(
 ): readonly T[] {
   return Array.isArray(value) ? value : [value];
 }
+
+export function printString(value: string) {
+  if (value) {
+    return value;
+  }
+  return "---- empty ----";
+}
