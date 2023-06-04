@@ -148,12 +148,12 @@ export class Importer {
       if (sep) {
         return value
           .split(sep)
-          .map(s => s.trim())
+          .map(s => s.trim().toLowerCase())
           .filter(Boolean);
       }
-      return [value.trim()];
+      return [value.trim().toLowerCase()];
     }
-    return value.trim();
+    return value.trim().toLowerCase();
   }
 
   private parse(file: File) {
