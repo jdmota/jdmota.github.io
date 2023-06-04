@@ -3,6 +3,7 @@ import type { FormulaFunction } from "./formula";
 import type { Data, Row } from "./importer";
 import {
   limitStringLength,
+  printPercentage,
   printString,
   removeAllChildren,
   toArray,
@@ -133,17 +134,19 @@ export class Analyzer {
         const td1 = document.createElement("td");
         td1.innerText = printString(answer);
         const td2 = document.createElement("td");
-        td2.innerText = `${count} of ${filteredTotal} (${
-          (count / filteredTotal) * 100
-        }%)`;
+        td2.innerText = `${count} of ${filteredTotal} (${printPercentage(
+          count,
+          filteredTotal
+        )})`;
         tr.appendChild(td1);
         tr.appendChild(td2);
         this.elems.projections.appendChild(tr);
       }
     }
 
-    return `${filteredTotal} filtered results out of ${total} (${
-      (filteredTotal / total) * 100
-    }%)`;
+    return `${filteredTotal} filtered results out of ${total} (${printPercentage(
+      filteredTotal,
+      total
+    )})`;
   }
 }

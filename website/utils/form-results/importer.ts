@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Papa from "papaparse";
-import { removeAllChildren } from "./utils";
+import { cleanArray, cleanText, removeAllChildren, split } from "./utils";
 
 export type Answer = string | readonly string[];
 export type Row = readonly Answer[];
@@ -114,19 +114,16 @@ export class Importer {
   }
 
   private processMultipleAnswers() {
-    const multiples = this.lastMultipleAnswers
-      .split("\n")
-      .map(s => s.trim().toLowerCase())
-      .filter(Boolean);
-
+    const multiples = split(cleanText(this.lastMultipleAnswers), "\n");
+    const cleanHeader = this.headerRow.map(cleanText);
     const set = new Set<number>();
 
     for (const question of multiples) {
       let found = false;
 
-      for (let idx = 0; idx < this.headerRow.length; idx++) {
-        const header = this.headerRow[idx];
-        if (header.toLowerCase().includes(question)) {
+      for (let idx = 0; idx < cleanHeader.length; idx++) {
+        const header = cleanHeader[idx];
+        if (header.includes(question)) {
           set.add(idx);
           found = true;
         }
@@ -143,17 +140,12 @@ export class Importer {
   }
 
   private transformAnswer(questionIdx: number, value: string): Answer {
+    value = cleanText(value);
     if (this.multipleAnswers.has(questionIdx)) {
       const sep = ANSWER_SEP.find(sep => value.includes(sep));
-      if (sep) {
-        return value
-          .split(sep)
-          .map(s => s.trim().toLowerCase())
-          .filter(Boolean);
-      }
-      return [value.trim().toLowerCase()];
+      return sep ? split(value, sep) : [value];
     }
-    return value.trim().toLowerCase();
+    return value;
   }
 
   private parse(file: File) {
@@ -161,7 +153,7 @@ export class Importer {
       dynamicTyping: false,
       step: row => {
         if (this.processHeader) {
-          this.headerRow = row.data.map(s => s.trim()).filter(Boolean);
+          this.headerRow = cleanArray(row.data);
           this.processMultipleAnswers();
           this.processHeader = false;
         } else {

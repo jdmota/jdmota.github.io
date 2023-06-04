@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@parcel/transformer-sass", "npm:2.9.1"],\
+            ["@sindresorhus/transliterate", "npm:1.6.0"],\
             ["@types/node", "npm:20.2.5"],\
             ["@types/papaparse", "npm:5.3.7"],\
             ["@types/qrcode", "npm:1.5.0"],\
@@ -1548,6 +1549,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@sindresorhus/transliterate", [\
+        ["npm:1.6.0", {\
+          "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@sindresorhus-transliterate-npm-1.6.0-85bb17cf9b-8.zip/node_modules/@sindresorhus/transliterate/",\
+          "packageDependencies": [\
+            ["@sindresorhus/transliterate", "npm:1.6.0"],\
+            ["escape-string-regexp", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@swc/core", [\
         ["npm:1.3.62", {\
           "packageLocation": "./.yarn/unplugged/@swc-core-virtual-0b7474ecb5/node_modules/@swc/core/",\
@@ -2795,6 +2806,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["escape-string-regexp", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:5.0.0", {\
+          "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/escape-string-regexp-npm-5.0.0-a663e825ce-8.zip/node_modules/escape-string-regexp/",\
+          "packageDependencies": [\
+            ["escape-string-regexp", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["eslint", [\
@@ -3561,6 +3579,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["jdmota.github.io", "workspace:."],\
             ["@parcel/transformer-sass", "npm:2.9.1"],\
+            ["@sindresorhus/transliterate", "npm:1.6.0"],\
             ["@types/node", "npm:20.2.5"],\
             ["@types/papaparse", "npm:5.3.7"],\
             ["@types/qrcode", "npm:1.5.0"],\
