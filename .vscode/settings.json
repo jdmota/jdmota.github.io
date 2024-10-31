@@ -1,31 +1,35 @@
 {
   "files.eol": "\n",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": "on"
   },
-  "eslint.nodePath": ".yarn/sdks",
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "typescriptreact"
-  ],
+  "tailwindCSS.emmetCompletions": true,
   "javascript.validate.enable": true,
   "typescript.validate.enable": true,
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "svelte.enable-ts-plugin": true,
   "[javascript]": {
     "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.formatOnSave": true
   },
-  "[typescriptreact]": {
+  "[html]": {
     "editor.formatOnSave": true
   },
-  "[html]": {
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[svelte]": {
     "editor.formatOnSave": true
   },
   "search.exclude": {

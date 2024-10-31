@@ -1,4 +1,6 @@
+//@ts-ignore
 import { parse, stringify, scale } from "svg-path-tools";
+//@ts-ignore
 import toPath from "element-to-path";
 
 // Based on https://github.com/elrumordelaluz/scale-that-svg/blob/master/index.js
@@ -58,7 +60,6 @@ export function scaleElement(node: Element, scaleOptions: { scale: number }) {
       }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const parentNode = node.parentNode!;
     parentNode.insertBefore(newPath, node);
     parentNode.removeChild(node);

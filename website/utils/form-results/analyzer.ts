@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { FormulaFunction } from "./formula";
 import type { Data, Row } from "./importer";
 import {

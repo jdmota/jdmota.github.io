@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Analyzer } from "./analyzer";
 import { limitStringLength, printString, removeAllChildren } from "./utils";
 

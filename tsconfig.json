@@ -2,20 +2,22 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "lib": ["esnext", "DOM", "DOM.Iterable"],
     "types": ["node"],
     "jsx": "preserve",
     "noEmit": true,
     "strict": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "useDefineForClassFields": true
+    "resolveJsonModule": true
   },
   "exclude": ["**/node_modules/**"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["website/**/*.ts", "website/**/*.svelte"]
 }

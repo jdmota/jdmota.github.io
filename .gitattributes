@@ -3,6 +3,7 @@
 *.ts eol=lf
 *.tsx eol=lf
 *.html eol=lf
+*.svelte eol=lf
 *.css eol=lf
 *.json eol=lf
 *.yaml eol=lf

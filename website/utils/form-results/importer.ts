@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Papa from "papaparse";
 import { cleanArray, cleanText, removeAllChildren, split } from "./utils";
 

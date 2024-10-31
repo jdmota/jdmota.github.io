@@ -1,7 +1,8 @@
 {
   "recommendations": [
+    "esbenp.prettier-vscode",
     "arcanis.vscode-zipfs",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "bradlc.vscode-tailwindcss",
+    "svelte.svelte-vscode"
   ]
 }
