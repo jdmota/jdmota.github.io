@@ -3,6 +3,7 @@
   "type": "module",
   "name": "jdmota.github.io",
   "scripts": {
+    "n": "node --enable-source-maps --import @swc-node/register/esm-register",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "serve": "sirv dist --dev",
     "dev": "vite --open",
@@ -17,11 +18,20 @@
     "svg-path-tools": "^1.0.0"
   },
   "devDependencies": {
+    "@sindresorhus/slugify": "^2.2.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@swc-node/register": "^1.10.9",
+    "@swc/core": "^1.7.42",
+    "@types/markdown-it": "^14",
     "@types/node": "^22.8.5",
     "@types/papaparse": "^5",
     "@types/qrcode": "^1.5.5",
     "autoprefixer": "^10.4.20",
+    "htmlnano": "^2.1.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-toc": "^1.2.0",
     "postcss": "^8.4.47",
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.3",
