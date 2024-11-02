@@ -2,7 +2,7 @@ I am currently a Ph.D. student in Computer Science working to develop tools to s
 I love to create usable tools to assist and help developers in their various tasks.
 In particular, I enjoy creating libraries and frameworks for Web and NodeJS development in TypeScript.
 
-## 💻 Programming skills
+## 💻 Programming Skills
 
 - Proficient in JavaScript/TypeScript
 - Moderate experience with Kotlin and Java
@@ -15,10 +15,16 @@ In particular, I enjoy creating libraries and frameworks for Web and NodeJS deve
 - **M.Sc.**, Computer Science, (*2018 - 2021*)
 - **B.Sc.**, Computer Science, (*2015 - 2018*)
 
-## ⚙️ Tools
+## ⚙️ Academic Tools
 
 - [JaTyC (Java Typestate Checker)](https://github.com/jdmota/java-typestate-checker)
 - [Typestate Editor](https://typestate-editor.github.io/)
+
+## 🚧 Other tools and personal projects
+
+- [QuaseJS](https://github.com/jdmota/quasejs)
+- [QR Code Generator](/utils/qrcode/)
+- [Form Results Analyzer](/utils/form-results/)
 
 ## 📂 Material
 
@@ -43,10 +49,5 @@ In particular, I enjoy creating libraries and frameworks for Web and NodeJS deve
 1. Lorenzo Bacchiani, Mario Bravetti, Marco Giunti, João Mota, António Ravara (2022). **A Java typestate checker supporting inheritance**. In: Science of Computer Programming, Volume 221, 102844, ISSN 0167-6423. [https://doi.org/10.1016/j.scico.2022.102844](https://doi.org/10.1016/j.scico.2022.102844)
 1. Mota, J., Giunti, M., Ravara, A. (2021). **Java Typestate Checker**. In: Damiani, F., Dardha, O. (eds) Coordination Models and Languages. COORDINATION 2021. Lecture Notes in Computer Science, vol 12717. Springer, Cham. [https://doi.org/10.1007/978-3-030-78142-2_8](https://doi.org/10.1007/978-3-030-78142-2_8)
 1. Trindade, A., Mota, J., & Ravara, A. (2020). **Typestates to Automata and back: a tool**. In Proceedings ICE 2020. [https://doi.org/10.4204/EPTCS.324.4](https://doi.org/10.4204/EPTCS.324.4)
-
-## 🚧 Other tools and side projects
-
-- [QR Code Generator](/utils/qrcode/)
-- [Form Results Analyzer](/utils/form-results/)
 
 <!-- Example CV: https://github.com/Allan-gitrepos/My_resume/blob/main/README.md -->
