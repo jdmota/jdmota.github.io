@@ -1,4 +1,5 @@
-I am currently a Ph.D. student in Computer Science working to develop tools to statically verify concurrent programs which make use of shared mutable state.
+I am currently a Ph.D. student in Computer Science at [NOVA School of Science and Technology](https://www.di.fct.unl.pt/en/teaching/phd-computer-science), and I am integrated in the [NOVA LINCS research lab](https://nova-lincs.di.fct.unl.pt/). My research topic consists of developing tools to statically verify concurrent programs which make use of shared mutable state.
+
 I love to create usable tools to assist and help developers in their various tasks.
 In particular, I enjoy creating libraries and frameworks for Web and NodeJS development in TypeScript.
 
