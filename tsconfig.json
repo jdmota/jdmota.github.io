@@ -9,14 +9,14 @@
     "jsx": "preserve",
     "noEmit": true,
     "strict": true,
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "noImplicitOverride": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true
   },
   "exclude": ["**/node_modules/**"],
   "include": ["website/**/*.ts", "website/**/*.svelte"]

@@ -1,6 +1,8 @@
+//@ts-check
 import fs from "fs/promises";
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { sveltePreprocess } from "svelte-preprocess";
 import slugify from "@sindresorhus/slugify";
@@ -11,17 +13,12 @@ import markdowntoc from "markdown-toc";
 import markdownlinks from "markdown-it-link-attributes";
 
 function renderMarkdown(md) {
-  return markdownit({
-    html: true,
-  })
+  return markdownit({ html: true })
     .use(markdownlinks, {
       matcher(href) {
         return href.match(/^https?:\/\//) || href.startsWith("/material/");
       },
-      attrs: {
-        target: "_blank",
-        rel: "noopener",
-      },
+      attrs: { target: "_blank", rel: "noopener" },
     })
     .use(markdownitanchor, { slugify })
     .render(md);
@@ -29,6 +26,7 @@ function renderMarkdown(md) {
 
 function renderToc(md) {
   const toc = markdowntoc(md, { slugify, maxdepth: 2 });
+  //@ts-ignore
   return renderMarkdown(toc.content);
 }
 
@@ -44,22 +42,18 @@ const indexMd = resolve("website/index.md").replaceAll("\\", "/");
 export default defineConfig({
   root,
   plugins: [
-    svelte({
-      preprocess: [sveltePreprocess({ typescript: true })],
-    }),
+    tailwindcss(),
+    svelte({ preprocess: [sveltePreprocess({ typescript: true })] }),
     {
       name: "my-index",
       enforce: "pre",
       buildStart() {
-        //this.addWatchFile(indexMd);
+        // this.addWatchFile(indexMd);
       },
       handleHotUpdate({ file, server }) {
         if (file === indexMd) {
           console.log("Updated", indexMd);
-          server.ws.send({
-            type: "full-reload",
-            path: "/index.html",
-          });
+          server.ws.send({ type: "full-reload", path: "/index.html" });
         }
       },
       async transformIndexHtml(html, ctx) {
