@@ -1,14 +1,15 @@
 I am currently a Ph.D. student in Computer Science at [NOVA School of Science and Technology](https://www.di.fct.unl.pt/en/teaching/phd-computer-science), and I am integrated in the [NOVA LINCS research lab](https://nova-lincs.di.fct.unl.pt/). My research topic consists of developing tools to statically verify concurrent programs which make use of shared mutable state.
 
+I consider myself to be a systematic and thoughtful person, and enjoy mentoring others.
 I love to create usable tools to assist and help developers in their various tasks.
-In particular, I enjoy creating libraries and frameworks for Web and NodeJS development in TypeScript.
+In particular, I delight in creating libraries and frameworks for Web and NodeJS development in TypeScript.
 
 ## 💻 Programming Skills
 
 - Proficient in JavaScript/TypeScript
-- Moderate experience with Kotlin and Java
-- Using Git/GitHub for version control regularly
-- Some experience in using the Coq proof assistant
+- Experienced with Kotlin and Java
+- Currently using the Rocq proof assistant regularly
+- Using Git/GitHub for version control
 
 ## 🎓 Education
 
@@ -29,6 +30,9 @@ In particular, I enjoy creating libraries and frameworks for Web and NodeJS deve
 
 ## 📂 Material
 
+- RADICAL 2025: "A type system framework for safe (a)synchronous concurrent programming"
+  - [Slides](/material/radical-2025-slides.pdf)
+  - [Submitted abstract](/material/radical-2025-submitted-abstract.pdf)
 - PLDI 2024 Student Research Competition
   - [Poster](/material/pldi24src-poster.pdf)
   - [Submitted abstract](/material/pldi24src-submitted-abstract.pdf)
@@ -37,11 +41,12 @@ In particular, I enjoy creating libraries and frameworks for Web and NodeJS deve
 
 ## 🎤 Workshops and Conferences
 
-- Paper "Behavioural Up/down Casting For Statically Typed Languages" presented at ECOOP 2024
-- Poster "Coping with shared mutable state in a typestate-oriented concurrent language" presented at PLDI 2024 Student Research Competition
-- Tutorial "JaTyC - Java Typestate Checker" presented at BehAPI Tutorials (Satellite Workshop of DisCoTec 2023)
-- Paper "Java Typestate Checker" presented at COORDINATION 2021 (DisCoTec 2021)
-- Paper "Typestates to Automata and back: a tool" presented at ICE 2020 (Satellite workshop of DisCoTec 2020)
+- "A type system framework for safe (a)synchronous concurrent programming" presented at [RADICAL 2025](https://sites.google.com/site/radicalconcur/Home/program)
+- Paper ["Behavioural Up/down Casting For Statically Typed Languages"](https://doi.org/10.4230/LIPIcs.ECOOP.2024.5) presented at [ECOOP 2024](https://2024.ecoop.org/details/ecoop-2024-papers/5/Behavioral-up-down-casting-for-statically-typed-languages)
+- Poster "Coping with shared mutable state in a typestate-oriented concurrent language" presented at [PLDI 2024 Student Research Competition](https://pldi24.sigplan.org/details/pldi-2024-src/9/Coping-with-shared-mutable-state-in-a-typestate-oriented-concurrent-language)
+- Tutorial "JaTyC - Java Typestate Checker" presented at [BehAPI Tutorials (Satellite Workshop of DisCoTec 2023)](https://www.discotec.org/2023/programme#friday-june-23rd)
+- Paper ["Java Typestate Checker"](https://doi.org/10.1007/978-3-030-78142-2_8) presented at [COORDINATION 2021 (DisCoTec 2021)](https://www.discotec.org/2021/programme#types-and-implementations-2)
+- Paper ["Typestates to Automata and back: a tool"](https://doi.org/10.4204/EPTCS.324.4) presented at [ICE 2020 (Satellite workshop of DisCoTec 2020)](https://www.discotec.org/2020/programme#languages)
 
 ## 📜 Publications
 
