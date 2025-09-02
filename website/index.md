@@ -32,6 +32,7 @@ In particular, I delight in creating libraries and frameworks for Web and NodeJS
 
 - RADICAL 2025: "A type system framework for safe (a)synchronous concurrent programming"
   - [Slides](/material/radical-2025-slides.pdf)
+  - [Presentation notes](https://github.com/jdmota/jdmota.github.io/blob/dev/website/public/material/radical-2025-notes.md)
   - [Submitted abstract](/material/radical-2025-submitted-abstract.pdf)
 - PLDI 2024 Student Research Competition
   - [Poster](/material/pldi24src-poster.pdf)
