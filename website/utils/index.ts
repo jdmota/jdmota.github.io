@@ -50,8 +50,8 @@ type SearchableUtil = Util &
 
 const myUtils: readonly Util[] = [
   {
-    title: "QRCode Generator",
-    desc: "Generate PNG and SVG QRCodes. The text you give is the text that is generated. No redirects. No ads.",
+    title: "QR Code Generator",
+    desc: "Generate PNG and SVG QR Codes. The text you give is the text that is generated. No redirects. No ads.",
     url: "/utils/qrcode/",
   },
 ];
