@@ -10,9 +10,6 @@
     "strings": "on"
   },
   "tailwindCSS.emmetCompletions": true,
-  "javascript.validate.enable": true,
-  "typescript.validate.enable": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "svelte.enable-ts-plugin": true,
   "[javascript]": {
     "editor.formatOnSave": true

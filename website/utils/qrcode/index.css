@@ -61,7 +61,9 @@ body {
   font-size: inherit;
 }
 
-#generate, #download-png, #download-svg {
+#generate,
+#download-png,
+#download-svg {
   height: 48px;
   margin: 8px 0;
   font-size: inherit;
@@ -71,7 +73,8 @@ body {
   width: 100%;
 }
 
-#download-png, #download-svg {
+#download-png,
+#download-svg {
   width: calc(50% - 16px);
   float: left;
 }
@@ -84,7 +87,8 @@ body {
   display: none;
 }
 
-#result svg, #result img {
+#result svg,
+#result img {
   margin: 8px auto;
   max-width: 300px;
   max-height: 300px;

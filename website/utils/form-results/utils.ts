@@ -15,7 +15,7 @@ export function limitStringLength(string: string, max = 50) {
 export function toArray<T extends string | number>(
   value: T | readonly T[]
 ): readonly T[] {
-  return Array.isArray(value) ? value : [value];
+  return Array.isArray(value) ? value : [value as T];
 }
 
 export function split(text: string, sep: string) {
