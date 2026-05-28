@@ -33,6 +33,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.8":
+  version: 7.29.2
+  resolution: "@babel/runtime@npm:7.29.2"
+  checksum: 10c0/30b80a0140d16467792e1bbeb06f655b0dab70407da38dfac7fedae9c859f9ae9d846ef14ad77bd3814c064295fe9b1bc551f1541ea14646ae9f22b71a8bc17a
+  languageName: node
+  linkType: hard
+
 "@emmetio/abbreviation@npm:^2.3.3":
   version: 2.3.3
   resolution: "@emmetio/abbreviation@npm:2.3.3"
@@ -156,6 +163,13 @@ __metadata:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
   checksum: 10c0/3d1ce6ebc69df9682a5a8896b414c6537e428a1d68b02fcc8363b04284a8ca0df04d0ee3013132252ab14f2527bc13bea6526a912ecb5658f0e39fd2860b4df4
+  languageName: node
+  linkType: hard
+
+"@material/material-color-utilities@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@material/material-color-utilities@npm:0.3.0"
+  checksum: 10c0/3bef025428b893f2acc9e9e2bd186363a60b7c0836fe43c78222e29fe67dc579618e844f0661a20657ed9f7fd8b94fd43a2961892894d0b6a2ba5264ce2673f8
   languageName: node
   linkType: hard
 
@@ -1116,6 +1130,15 @@ __metadata:
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
   checksum: 10c0/9308baf0a7e4838a82bbfd11e01b1cb0f0cf2893bc1676c27c2a8c0e70cbae1c59120c3268517a8ae7fb6376b4639ef81ca22582611dbee4ed28df945134aaee
+  languageName: node
+  linkType: hard
+
+"beercss@npm:^4.0.21":
+  version: 4.0.21
+  resolution: "beercss@npm:4.0.21"
+  dependencies:
+    material-dynamic-colors: "npm:^1.1.4"
+  checksum: 10c0/b3e48c511511acb498ba67fb6ee102c2f683ee0b6a2e708a2235b2f0a9222a6e3e821d729135915ab7634f87ec5fab8ba0e0af2ff32343c4c64f20e720116a40
   languageName: node
   linkType: hard
 
@@ -2083,12 +2106,14 @@ __metadata:
     "@types/node": "npm:^25.9.1"
     "@types/papaparse": "npm:^5.5.2"
     "@types/qrcode": "npm:^1.5.6"
+    beercss: "npm:^4.0.21"
     element-to-path: "npm:^1.2.1"
     htmlnano: "npm:^3.3.2"
     markdown-it: "npm:^14.1.1"
     markdown-it-anchor: "npm:^9.2.0"
     markdown-it-link-attributes: "npm:^4.0.1"
     markdown-toc: "npm:^1.2.0"
+    match-sorter: "npm:^8.3.0"
     papaparse: "npm:^5.5.3"
     prettier: "npm:^3.8.3"
     prettier-plugin-svelte: "npm:^4.0.0"
@@ -2505,6 +2530,27 @@ __metadata:
   bin:
     markdown-toc: cli.js
   checksum: 10c0/490c8b09289691134c9cc14879fe53bd30cdcf5d38a6fcc9185e63245550a14a1abb5dcf48d21c7120ae79f12e166ecfc1ec7c1df2be345b1af796e53ce866be
+  languageName: node
+  linkType: hard
+
+"match-sorter@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "match-sorter@npm:8.3.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.8"
+    remove-accents: "npm:0.5.0"
+  checksum: 10c0/e71a7aa75e87d356867a12f61af7cf9236806d6c58550d7b057f567ff7baa177a7b0f1311cbce528797043cd75463274db43a8139002ba708401e4a84dce1083
+  languageName: node
+  linkType: hard
+
+"material-dynamic-colors@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "material-dynamic-colors@npm:1.1.4"
+  dependencies:
+    "@material/material-color-utilities": "npm:^0.3.0"
+  bin:
+    material-dynamic-colors: cli.js
+  checksum: 10c0/fab195e30a435b86a5c2cb4d83921cb3af8ade7c57153fe5fe7ec633b4b61e869d8c7c9e983857bc80e65f8c8f37a0a91362e11d6c60a20d92a0cf1f82900624
   languageName: node
   linkType: hard
 
@@ -3096,6 +3142,13 @@ __metadata:
   bin:
     remarkable: ./bin/remarkable.js
   checksum: 10c0/c9c5956ff92f697983d501c69fb1cb5111ce1ecd91fdedc70795a51edac4da7b223f3d3785b8c48f3184735214ff595d2e3e2e6ede9bd1646fb4bef84316dcb5
+  languageName: node
+  linkType: hard
+
+"remove-accents@npm:0.5.0":
+  version: 0.5.0
+  resolution: "remove-accents@npm:0.5.0"
+  checksum: 10c0/a75321aa1b53d9abe82637115a492770bfe42bb38ed258be748bf6795871202bc8b4badff22013494a7029f5a241057ad8d3f72adf67884dbe15a9e37e87adc4
   languageName: node
   linkType: hard
 

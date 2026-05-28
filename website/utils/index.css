@@ -1,0 +1,66 @@
+@import "tailwindcss";
+/* @plugin "@tailwindcss/typography"; */
+@import "./beer.css";
+
+:root {
+  --bg: white;
+  --color-stroke: #e5e4e7;
+
+  /* Grey scale */
+  --grey1: rgb(233, 233, 233);
+  --grey2: rgb(197, 197, 197);
+  --grey3: rgb(164, 164, 164);
+  --grey4: rgb(107, 107, 107);
+  --grey5: rgb(60, 60, 60);
+}
+
+body {
+  font-size: var(--size);
+  background-color: var(--bg);
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.app {
+  margin: 1em;
+}
+
+.utils-container {
+  @apply mt-6;
+
+  .utils-title {
+    @apply text-xl mb-4 italic;
+  }
+
+  .utils-grid {
+    @apply flex flex-wrap gap-2;
+
+    .util {
+      @apply block p-2 no-underline border;
+
+      max-width: 300px;
+
+      &:hover {
+        background-color: var(--grey1);
+        border-color: var(--grey1);
+      }
+
+      .util-title {
+        @apply text-lg mb-2;
+      }
+
+      .util-desc {
+      }
+    }
+
+    @media (max-width: 500px) {
+      @apply block;
+
+      .util {
+        @apply max-w-full mb-2;
+      }
+    }
+  }
+}

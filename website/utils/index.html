@@ -9,5 +9,28 @@
     />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="app">
+      <div class="search-container">
+        <div class="field border">
+          <input
+            id="search-input"
+            name="search"
+            type="text"
+            placeholder="Search utility..."
+            autofocus
+          />
+        </div>
+      </div>
+      <div id="my-utils" class="utils-container">
+        <div class="utils-title">Made by me</div>
+        <div class="utils-grid"></div>
+      </div>
+      <div id="awesome-utils" class="utils-container">
+        <div class="utils-title">Other awesome utilities</div>
+        <div class="utils-grid"></div>
+      </div>
+    </div>
+    <script src="index.ts" type="module"></script>
+  </body>
 </html>

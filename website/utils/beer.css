@@ -1,0 +1,68 @@
+@import "beercss/src/cdn/settings/globals.css";
+/* @import "beercss/src/cdn/settings/light.css"; */
+/* @import "beercss/src/cdn/settings/dark.css"; */
+/* @import "beercss/src/cdn/settings/reset.css"; */
+/* @import "beercss/src/cdn/settings/theme.css"; */
+/* @import "beercss/src/cdn/settings/fonts.css"; */
+
+.transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
+/* @import "beercss/src/cdn/helpers/alignments.css"; */
+/* @import "beercss/src/cdn/helpers/blurs.css"; */
+/* @import "beercss/src/cdn/helpers/colors.css"; */
+/* @import "beercss/src/cdn/helpers/directions.css"; */
+/* @import "beercss/src/cdn/helpers/elevates.css"; */
+@import "beercss/src/cdn/helpers/forms.css";
+/* @import "beercss/src/cdn/helpers/margins.css"; */
+/* @import "beercss/src/cdn/helpers/opacities.css"; */
+/* @import "beercss/src/cdn/helpers/paddings.css"; */
+/* @import "beercss/src/cdn/helpers/positions.css"; */
+/* @import "beercss/src/cdn/helpers/ripples.css"; */
+/* @import "beercss/src/cdn/helpers/scrolls.css"; */
+/* @import "beercss/src/cdn/helpers/shadows.css"; */
+/* @import "beercss/src/cdn/helpers/sizes.css"; */
+/* @import "beercss/src/cdn/helpers/spaces.css"; */
+/* @import "beercss/src/cdn/helpers/responsive.css"; */
+/* @import "beercss/src/cdn/helpers/typography.css"; */
+/* @import "beercss/src/cdn/helpers/waves.css"; */
+/* @import "beercss/src/cdn/helpers/zoom.css"; */
+
+/* @import "beercss/src/cdn/elements/badges.css"; */
+/* @import "beercss/src/cdn/elements/bars.css"; */
+/* @import "beercss/src/cdn/elements/buttons.css"; */
+/* @import "beercss/src/cdn/elements/cards.css"; */
+/* @import "beercss/src/cdn/elements/chips.css"; */
+/* @import "beercss/src/cdn/elements/dialogs.css"; */
+/* @import "beercss/src/cdn/elements/dividers.css"; */
+/* @import "beercss/src/cdn/elements/expansions.css"; */
+@import "beercss/src/cdn/elements/fields.css";
+/* @import "beercss/src/cdn/elements/grids.css"; */
+/* @import "beercss/src/cdn/elements/icons.css"; */
+/* @import "beercss/src/cdn/elements/layouts.css"; */
+/* @import "beercss/src/cdn/elements/lists.css"; */
+/* @import "beercss/src/cdn/elements/mainLayouts.css"; */
+/* @import "beercss/src/cdn/elements/media.css"; */
+/* @import "beercss/src/cdn/elements/menus.css"; */
+/* @import "beercss/src/cdn/elements/navigations.css"; */
+/* @import "beercss/src/cdn/elements/overlays.css"; */
+/* @import "beercss/src/cdn/elements/pages.css"; */
+/* @import "beercss/src/cdn/elements/progress.css"; */
+/* @import "beercss/src/cdn/elements/shapes.css"; */
+/* @import "beercss/src/cdn/elements/selections.css"; */
+/* @import "beercss/src/cdn/elements/sliders.css"; */
+/* @import "beercss/src/cdn/elements/snackbars.css"; */
+/* @import "beercss/src/cdn/elements/tables.css"; */
+/* @import "beercss/src/cdn/elements/tabs.css"; */
+/* @import "beercss/src/cdn/elements/tooltips.css"; */
+
+:is(.button, button):is(.circle):not(.chip, .extend):active {
+  border-radius: 50% !important;
+}
+
+nav.group.connected > :is(.button, button).no-round.active {
+  border-radius: 0rem !important;
+}
