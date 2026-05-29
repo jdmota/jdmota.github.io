@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "beercss/src/cdn/settings/light.css";
+@import "../_shared/beer.css";
 @import "../_shared/shared.css";
 
 :root {

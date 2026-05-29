@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@import "./beer.css";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 :root {
   --bg: white;
@@ -27,6 +28,36 @@ button {
   margin: 1em;
 }
 
+.home-button {
+  @apply fixed block top-0 right-0 z-20;
+  width: 46px;
+  height: 46px;
+
+  &:hover {
+    > span {
+      color: var(--grey5);
+    }
+
+    .triangle {
+      border-color: transparent #87c247 transparent transparent;
+    }
+  }
+
+  > span {
+    @apply absolute top-0 right-0;
+    color: black;
+  }
+
+  .triangle {
+    @apply absolute top-0 right-0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 46px 46px 0;
+    border-color: transparent #608a32 transparent transparent;
+  }
+}
+
 .icon {
   display: inline-block;
   width: 24px;
@@ -41,4 +72,8 @@ button {
 
 .icon.content-copy {
   mask-image: url("./icons/content-copy.svg");
+}
+
+.icon.home {
+  mask-image: url("./icons/home.svg");
 }

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./_shared/beer.css";
 @import "./_shared/shared.css";
 
 .utils-container {
