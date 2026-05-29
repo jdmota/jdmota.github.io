@@ -1,7 +1,7 @@
 @import "beercss/src/cdn/settings/globals.css";
 /* @import "beercss/src/cdn/settings/light.css"; */
 /* @import "beercss/src/cdn/settings/dark.css"; */
-/* @import "beercss/src/cdn/settings/reset.css"; */
+@import "beercss/src/cdn/settings/reset.css";
 /* @import "beercss/src/cdn/settings/theme.css"; */
 /* @import "beercss/src/cdn/settings/fonts.css"; */
 
@@ -12,13 +12,13 @@
 }
 
 /* @import "beercss/src/cdn/helpers/alignments.css"; */
-/* @import "beercss/src/cdn/helpers/blurs.css"; */
-/* @import "beercss/src/cdn/helpers/colors.css"; */
+@import "beercss/src/cdn/helpers/blurs.css";
+@import "beercss/src/cdn/helpers/colors.css";
 /* @import "beercss/src/cdn/helpers/directions.css"; */
 /* @import "beercss/src/cdn/helpers/elevates.css"; */
 @import "beercss/src/cdn/helpers/forms.css";
 /* @import "beercss/src/cdn/helpers/margins.css"; */
-/* @import "beercss/src/cdn/helpers/opacities.css"; */
+@import "beercss/src/cdn/helpers/opacities.css";
 /* @import "beercss/src/cdn/helpers/paddings.css"; */
 /* @import "beercss/src/cdn/helpers/positions.css"; */
 /* @import "beercss/src/cdn/helpers/ripples.css"; */
@@ -28,12 +28,12 @@
 /* @import "beercss/src/cdn/helpers/spaces.css"; */
 /* @import "beercss/src/cdn/helpers/responsive.css"; */
 /* @import "beercss/src/cdn/helpers/typography.css"; */
-/* @import "beercss/src/cdn/helpers/waves.css"; */
+@import "beercss/src/cdn/helpers/waves.css";
 /* @import "beercss/src/cdn/helpers/zoom.css"; */
 
 /* @import "beercss/src/cdn/elements/badges.css"; */
 /* @import "beercss/src/cdn/elements/bars.css"; */
-/* @import "beercss/src/cdn/elements/buttons.css"; */
+@import "beercss/src/cdn/elements/buttons.css";
 /* @import "beercss/src/cdn/elements/cards.css"; */
 /* @import "beercss/src/cdn/elements/chips.css"; */
 /* @import "beercss/src/cdn/elements/dialogs.css"; */
@@ -57,7 +57,7 @@
 /* @import "beercss/src/cdn/elements/snackbars.css"; */
 /* @import "beercss/src/cdn/elements/tables.css"; */
 /* @import "beercss/src/cdn/elements/tabs.css"; */
-/* @import "beercss/src/cdn/elements/tooltips.css"; */
+@import "beercss/src/cdn/elements/tooltips.css";
 
 :is(.button, button):is(.circle):not(.chip, .extend):active {
   border-radius: 50% !important;
@@ -65,4 +65,24 @@
 
 nav.group.connected > :is(.button, button).no-round.active {
   border-radius: 0rem !important;
+}
+
+/* border class from beercss conflicts with tailwindcss */
+
+.field.field-border {
+  border-radius: 0.25rem;
+}
+
+.field:not(.label) > :is(input, select),
+.field.field-border:not(.fill) > :is(input, select) {
+  padding-block-start: 0;
+}
+
+.field.field-border > :is(input, textarea, select) {
+  border-color: var(--outline);
+}
+
+.field.invalid.field-border > :is(input, textarea, select),
+.field.invalid.field-border > :is(input, textarea, select):focus {
+  border-color: var(--error);
 }

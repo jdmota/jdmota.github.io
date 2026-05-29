@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "beercss/src/cdn/settings/light.css";
+@import "../_shared/shared.css";
+
+:root {
+  --error: red;
+}
+
+a[href] {
+  color: var(--color-link);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.description {
+  @apply mb-2;
+}
+
+#color-preview {
+  @apply w-full border mt-2;
+  height: 120px;
+  background-color: white;
+}
+
+#color-results {
+  @apply mt-2;
+
+  > div {
+    line-height: 32px;
+
+    > span {
+      @apply m-2 inline-block;
+
+      &:nth-child(1) {
+        @apply font-bold;
+        width: 54px;
+      }
+
+      &:nth-child(2) {
+        @apply inline-flex;
+        justify-content: space-between;
+        width: 274px;
+      }
+
+      &:nth-child(3) {
+        @apply italic;
+
+        @media (max-width: 670px) {
+          @apply block;
+        }
+      }
+    }
+
+    button {
+      color: black;
+      background-color: transparent;
+    }
+  }
+}

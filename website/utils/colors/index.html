@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JDMOTA | Colors</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="description">
+        Simple color format converter. (Thanks to
+        <a
+          href="https://www.npmjs.com/package/chroma-js"
+          target="_blank"
+          rel="noopener noreferrer"
+          >npm:chroma-js</a
+        >)
+      </div>
+      <div id="color-field" class="field field-border">
+        <input
+          id="color-input"
+          name="search"
+          type="text"
+          placeholder="Type color in any format to convert"
+          autofocus
+        />
+        <output id="color-error" class="invalid"></output>
+      </div>
+      <div id="color-preview"></div>
+      <div id="color-results"></div>
+    </div>
+    <script src="index.ts" type="module"></script>
+  </body>
+</html>

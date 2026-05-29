@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "./beer.css";
+
+:root {
+  --bg: white;
+  --color-stroke: #e5e4e7;
+  --color-link: rgb(0, 0, 238);
+
+  /* Grey scale */
+  --grey1: rgb(233, 233, 233);
+  --grey2: rgb(197, 197, 197);
+  --grey3: rgb(164, 164, 164);
+  --grey4: rgb(107, 107, 107);
+  --grey5: rgb(60, 60, 60);
+}
+
+body {
+  font-size: var(--size);
+  background-color: var(--bg);
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.app {
+  margin: 1em;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  mask-size: 24px 24px;
+  background-color: currentcolor;
+}
+
+.icon.open-in-new {
+  mask-image: url("./icons/open-in-new.svg");
+}
+
+.icon.content-copy {
+  mask-image: url("./icons/content-copy.svg");
+}

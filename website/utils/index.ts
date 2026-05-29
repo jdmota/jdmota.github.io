@@ -1,46 +1,16 @@
-// import transliterate from "@sindresorhus/transliterate";
 import { matchSorter } from "match-sorter";
+import { createAnchor, createApp, debounce } from "./_shared/shared.ts";
 
-function onLoad() {
-  return new Promise<void>(resolve => {
-    if (document.readyState === "complete") {
-      resolve();
-    } else {
-      const fn = () => {
-        window.removeEventListener("load", fn);
-        resolve();
-      };
-      window.addEventListener("load", fn);
-    }
-  });
-}
-
-function debounce<T>(fn: (arg: T) => void, delay: number) {
-  let id: NodeJS.Timeout | number | undefined = undefined;
-  return (arg: T) => {
-    clearTimeout(id);
-    id = setTimeout(() => fn(arg), delay);
-  };
-}
-
-/* function throttle<T>(fn: (arg: T) => void, delay: number) {
-  let id: NodeJS.Timeout | number | undefined = undefined;
-  return (arg: T) => {
-    if (id == null) {
-      fn(arg);
-      id = setTimeout(() => (id = undefined), delay);
-    }
-  };
-} */
-
-/* function cleanText(text: string) {
-  return transliterate(text.trim()).toLowerCase();
-} */
+type UtilAction = Readonly<{
+  name: string;
+  url: string;
+}>;
 
 type Util = Readonly<{
   title: string;
   desc: string;
   url: string;
+  actions?: readonly UtilAction[];
 }>;
 
 type SearchableUtil = Util &
@@ -51,25 +21,67 @@ type SearchableUtil = Util &
 const myUtils: readonly Util[] = [
   {
     title: "QR Code Generator",
-    desc: "Generate PNG and SVG QR Codes. The text you give is the text that is generated. No redirects. No ads.",
+    desc: "Generate PNG and SVG QR Codes. The text you give is the text that is generated. No redirects. No ads. (Thanks to npm:qrcode)",
     url: "/utils/qrcode/",
+  },
+  {
+    title: "Color Format Converter",
+    desc: "Simple color format converter. (Thanks to npm:chroma-js)",
+    url: "/utils/colors/",
   },
 ];
 
-const awesomeUtils: readonly Util[] = [];
+const awesomeUtils: readonly Util[] = [
+  {
+    title: "VERT",
+    desc: "An awesome file converter.",
+    url: "https://vert.sh/",
+  },
+  {
+    title: "Squoosh",
+    desc: "An awesome image compressor.",
+    url: "https://squoosh.app/",
+  },
+  {
+    title: "YT-DLP",
+    desc: "A feature-rich command-line audio/video downloader",
+    url: "https://github.com/yt-dlp/yt-dlp",
+    actions: [
+      {
+        name: "Installation",
+        url: "https://github.com/yt-dlp/yt-dlp/wiki/Installation",
+      },
+    ],
+  },
+  {
+    title: "Icon Explorer",
+    desc: "Icon Explorer with Instant searching, powered by Iconify",
+    url: "https://icones.js.org/",
+  },
+  {
+    title: "Color Converter",
+    desc: "By W3 Schools",
+    url: "https://www.w3schools.com/colors/colors_converter.asp",
+  },
+  {
+    title: "Awesome Lists",
+    desc: "Awesome lists about all kinds of interesting topics by Sindre Sorhus",
+    url: "https://github.com/sindresorhus/awesome",
+  },
+];
 
-(async () => {
-  await onLoad();
-
+createApp(() => {
   const myUtilsElem = document.querySelector("#my-utils .utils-grid")!;
   const awesomeUtilsElem = document.querySelector(
     "#awesome-utils .utils-grid"
   )!;
 
   function createUtil(util: Util) {
-    const anchor = document.createElement("a");
-    anchor.className = "util";
-    anchor.href = util.url;
+    const container = document.createElement("div");
+    container.className = "util";
+
+    const main = createAnchor(util.url, false);
+    main.className = "util-main";
 
     const title = document.createElement("div");
     title.className = "util-title";
@@ -79,9 +91,33 @@ const awesomeUtils: readonly Util[] = [];
     desc.className = "util-desc";
     desc.innerText = util.desc;
 
-    anchor.appendChild(title);
-    anchor.appendChild(desc);
-    return anchor;
+    const actions = document.createElement("div");
+    actions.className = "util-actions";
+
+    if (util.actions && util.actions.length > 0) {
+      for (const { name, url } of util.actions) {
+        const action = createAnchor(url, true);
+        action.className = "util-action";
+        action.innerText = name;
+        actions.appendChild(action);
+      }
+    } else {
+      container.classList.add("util-no-actions");
+    }
+
+    const newTab = createAnchor(util.url, true);
+    newTab.className = "util-new-tab button square";
+
+    const newTabIcon = document.createElement("i");
+    newTabIcon.className = "icon open-in-new";
+    newTab.appendChild(newTabIcon);
+
+    main.appendChild(title);
+    main.appendChild(desc);
+    container.appendChild(main);
+    container.appendChild(actions);
+    container.appendChild(newTab);
+    return container;
   }
 
   const allSearchableUtils: SearchableUtil[] = [];
@@ -119,4 +155,4 @@ const awesomeUtils: readonly Util[] = [];
   searchElem.addEventListener("input", () => {
     search(searchElem.value);
   });
-})();
+});
