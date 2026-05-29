@@ -10,6 +10,7 @@ const root = "./website";
 const entries = {
   index: "index.html",
   utils: "utils/index.html",
+  colors: "utils/colors/index.html",
   formResults: "utils/form-results/index.html",
   qrcode: "utils/qrcode/index.html",
 };
