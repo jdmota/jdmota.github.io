@@ -13,10 +13,6 @@ body {
 
 .app {
   margin: 24px;
-
-  * {
-    display: block;
-  }
 }
 
 .description {
@@ -39,72 +35,129 @@ body {
   font-size: inherit;
 }
 
-#label-error-level {
-  float: left;
-  width: 200px;
-  line-height: 32px;
-  margin: 12px;
+details {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+
+  summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+
+  &[open] {
+    padding: 0.5em;
+  }
+
+  &[open] summary {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 0.5em;
+  }
 }
 
-#error-level {
-  width: calc(100% - 224px);
-  margin: 16px 0;
-  padding: 16px;
-  font-size: inherit;
+.more-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  input,
+  select,
+  label {
+    display: block;
+    padding: 8px;
+    height: 32px;
+    line-height: 32px;
+    font-size: inherit;
+    margin-bottom: 4px;
+  }
+
+  input {
+    margin-right: 12px;
+  }
+
+  select {
+    height: 52px;
+  }
+
+  > div {
+    display: flex;
+  }
 }
 
-#label-with-logo {
-  float: left;
-  width: 168px;
-  line-height: 32px;
-  margin: 26px 12px;
-}
-
-#with-logo {
-  float: left;
-  margin: 26px 0px;
-  width: 32px;
-  height: 32px;
-  font-size: inherit;
+#dark-color,
+#light-color {
+  width: 260px;
 }
 
 #logo-text {
-  width: calc(100% - 244px);
+  width: calc(100% - 20px);
   height: 32px;
-  margin: 16px 0;
+  margin: 8px 0;
   padding: 8px;
   font-size: inherit;
 }
 
 #generate,
-#download-png,
-#download-svg {
-  height: 48px;
-  margin: 8px 0;
-  font-size: inherit;
+#result-buttons {
+  margin-top: 16px;
 }
 
 #generate {
   width: 100%;
-}
-
-#download-png,
-#download-svg {
-  width: calc(50% - 16px);
-  float: left;
-}
-
-#download-png {
-  margin-right: 32px;
+  height: 48px;
+  font-size: inherit;
 }
 
 #result-buttons {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-evenly;
+
+  button {
+    width: 216px;
+    height: 48px;
+    font-size: inherit;
+  }
 }
 
-#result svg,
-#result img {
-  margin: 8px auto;
-  max-width: 300px;
-  max-height: 300px;
+#result {
+  margin: 16px auto;
+
+  svg,
+  img {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+#tooltip {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 8px;
+  padding: 6px;
+  background-color: aqua;
+
+  &.show {
+    display: block;
+  }
+}
+
+body.fullscreen .app {
+  > * {
+    display: none !important;
+  }
+
+  #result {
+    display: block !important;
+  }
 }

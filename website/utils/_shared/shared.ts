@@ -1,24 +1,5 @@
 // import transliterate from "@sindresorhus/transliterate";
 
-export function onLoad() {
-  return new Promise<void>(resolve => {
-    if (document.readyState === "complete") {
-      resolve();
-    } else {
-      const fn = () => {
-        window.removeEventListener("load", fn);
-        resolve();
-      };
-      window.addEventListener("load", fn);
-    }
-  });
-}
-
-export async function createApp(fn: () => void) {
-  await onLoad();
-  fn();
-}
-
 export function objectKeys<K extends string>(obj: {
   [key in K]?: any;
 }): readonly K[] {

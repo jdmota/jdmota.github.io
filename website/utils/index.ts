@@ -1,5 +1,5 @@
 import { matchSorter } from "match-sorter";
-import { createAnchor, createApp, debounce } from "./_shared/shared.ts";
+import { createAnchor, debounce } from "./_shared/shared.ts";
 
 type UtilAction = Readonly<{
   name: string;
@@ -33,6 +33,11 @@ const myUtils: readonly Util[] = [
 
 const awesomeUtils: readonly Util[] = [
   {
+    title: "Icon Explorer",
+    desc: "Icon Explorer with Instant searching, powered by Iconify",
+    url: "https://icones.js.org/",
+  },
+  {
     title: "VERT",
     desc: "An awesome file converter.",
     url: "https://vert.sh/",
@@ -54,11 +59,6 @@ const awesomeUtils: readonly Util[] = [
     ],
   },
   {
-    title: "Icon Explorer",
-    desc: "Icon Explorer with Instant searching, powered by Iconify",
-    url: "https://icones.js.org/",
-  },
-  {
     title: "Color Converter",
     desc: "By W3 Schools",
     url: "https://www.w3schools.com/colors/colors_converter.asp",
@@ -70,89 +70,83 @@ const awesomeUtils: readonly Util[] = [
   },
 ];
 
-createApp(() => {
-  const myUtilsElem = document.querySelector("#my-utils .utils-grid")!;
-  const awesomeUtilsElem = document.querySelector(
-    "#awesome-utils .utils-grid"
-  )!;
+const myUtilsElem = document.querySelector("#my-utils .utils-grid")!;
+const awesomeUtilsElem = document.querySelector("#awesome-utils .utils-grid")!;
 
-  function createUtil(util: Util) {
-    const container = document.createElement("div");
-    container.className = "util";
+function createUtil(util: Util) {
+  const container = document.createElement("div");
+  container.className = "util";
 
-    const main = createAnchor(util.url, false);
-    main.className = "util-main";
+  const main = createAnchor(util.url, false);
+  main.className = "util-main";
 
-    const title = document.createElement("div");
-    title.className = "util-title";
-    title.innerText = util.title;
+  const title = document.createElement("div");
+  title.className = "util-title";
+  title.innerText = util.title;
 
-    const desc = document.createElement("div");
-    desc.className = "util-desc";
-    desc.innerText = util.desc;
+  const desc = document.createElement("div");
+  desc.className = "util-desc";
+  desc.innerText = util.desc;
 
-    const actions = document.createElement("div");
-    actions.className = "util-actions";
+  const actions = document.createElement("div");
+  actions.className = "util-actions";
 
-    if (util.actions && util.actions.length > 0) {
-      for (const { name, url } of util.actions) {
-        const action = createAnchor(url, true);
-        action.className = "util-action";
-        action.innerText = name;
-        actions.appendChild(action);
-      }
-    } else {
-      container.classList.add("util-no-actions");
+  if (util.actions && util.actions.length > 0) {
+    for (const { name, url } of util.actions) {
+      const action = createAnchor(url, true);
+      action.className = "util-action";
+      action.innerText = name;
+      actions.appendChild(action);
     }
-
-    const newTab = createAnchor(util.url, true);
-    newTab.className = "util-new-tab button square";
-
-    const newTabIcon = document.createElement("i");
-    newTabIcon.className = "icon open-in-new";
-    newTab.appendChild(newTabIcon);
-
-    main.appendChild(title);
-    main.appendChild(desc);
-    container.appendChild(main);
-    container.appendChild(actions);
-    container.appendChild(newTab);
-    return container;
+  } else {
+    container.classList.add("util-no-actions");
   }
 
-  const allSearchableUtils: SearchableUtil[] = [];
+  const newTab = createAnchor(util.url, true);
+  newTab.className = "util-new-tab button square";
 
-  for (const util of myUtils) {
-    const elem = createUtil(util);
-    allSearchableUtils.push({ ...util, elem });
-    myUtilsElem.appendChild(elem);
-  }
+  const newTabIcon = document.createElement("i");
+  newTabIcon.className = "icon open-in-new";
+  newTab.appendChild(newTabIcon);
 
-  for (const util of awesomeUtils) {
-    const elem = createUtil(util);
-    allSearchableUtils.push({ ...util, elem });
-    awesomeUtilsElem.appendChild(elem);
-  }
+  main.appendChild(title);
+  main.appendChild(desc);
+  container.appendChild(main);
+  container.appendChild(actions);
+  container.appendChild(newTab);
+  return container;
+}
 
-  const searchElem = document.querySelector(
-    "#search-input"
-  )! as HTMLInputElement;
+const allSearchableUtils: SearchableUtil[] = [];
 
-  const search = debounce((userText: string) => {
-    const results = matchSorter(allSearchableUtils, userText, {
-      keys: ["title", "desc", "url"],
-    });
+for (const util of myUtils) {
+  const elem = createUtil(util);
+  allSearchableUtils.push({ ...util, elem });
+  myUtilsElem.appendChild(elem);
+}
 
-    for (const { elem } of allSearchableUtils) {
-      elem.style.display = "none";
-    }
+for (const util of awesomeUtils) {
+  const elem = createUtil(util);
+  allSearchableUtils.push({ ...util, elem });
+  awesomeUtilsElem.appendChild(elem);
+}
 
-    for (const { elem } of results) {
-      elem.style.display = "block";
-    }
-  }, 200);
+const searchElem = document.querySelector("#search-input")! as HTMLInputElement;
 
-  searchElem.addEventListener("input", () => {
-    search(searchElem.value);
+const search = debounce((userText: string) => {
+  const results = matchSorter(allSearchableUtils, userText, {
+    keys: ["title", "desc", "url"],
   });
+
+  for (const { elem } of allSearchableUtils) {
+    elem.style.display = "none";
+  }
+
+  for (const { elem } of results) {
+    elem.style.display = "block";
+  }
+}, 200);
+
+searchElem.addEventListener("input", () => {
+  search(searchElem.value);
 });

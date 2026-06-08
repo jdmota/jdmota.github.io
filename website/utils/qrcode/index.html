@@ -25,37 +25,49 @@
           >npm:qrcode</a
         >)
       </div>
-      <input
-        id="text"
-        type="text"
-        placeholder="Enter your text here"
-        autofocus
-      />
-      <label id="label-error-level" for="error-level">
-        Error Correction Level:
-      </label>
-      <select id="error-level">
-        <option value="high">High</option>
-        <option value="quartile">Quartile</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
-      </select>
-      <div class="clear"></div>
-      <input type="checkbox" id="with-logo" />
-      <label id="label-with-logo" for="with-logo">With logo?</label>
-      <input
-        id="logo-text"
-        type="text"
-        placeholder="Optionally enter the SVG code for a logo here"
-      />
-      <div class="clear"></div>
+      <input id="text" type="text" placeholder="Enter your text here" />
+      <details class="advanced-options">
+        <summary>Advanced Options</summary>
+        <div class="more-options">
+          <div>
+            <label id="dark-color-label" for="dark-color">Dark color:</label>
+            <input id="dark-color" type="text" placeholder="default: #1A1A1A" />
+          </div>
+          <div>
+            <label id="light-color-label" for="light-color">Light color:</label>
+            <input
+              id="light-color"
+              type="text"
+              placeholder="default: white (e.g., transparent)"
+            />
+          </div>
+          <div>
+            <label id="label-error-level" for="error-level">
+              Error Correction Level:
+            </label>
+            <select id="error-level">
+              <option value="high">High</option>
+              <option value="quartile">Quartile</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+        </div>
+        <input
+          id="logo-text"
+          type="text"
+          placeholder="Optionally enter the SVG code for a logo here"
+        />
+      </details>
       <button id="generate">Generate</button>
       <div id="result-buttons">
         <button id="download-png">Download PNG image</button>
         <button id="download-svg">Download SVG image</button>
-        <div class="clear"></div>
+        <button id="copy-png">Copy PNG image</button>
+        <button id="copy-svg">Copy SVG image</button>
       </div>
       <div id="result"></div>
+      <div id="tooltip"></div>
     </div>
     <script src="index.ts" type="module"></script>
   </body>
