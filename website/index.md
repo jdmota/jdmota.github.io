@@ -22,7 +22,7 @@ In particular, I delight in creating libraries and frameworks for Web and NodeJS
 - [JaTyC (Java Typestate Checker)](https://github.com/jdmota/java-typestate-checker)
 - [Typestate Editor](https://typestate-editor.github.io/)
 
-## 🚧 Other Tools and Personal Projects
+## 🚧 Tools and Personal Projects
 
 - [QuaseJS](https://github.com/jdmota/quasejs)
 - [QR Code Generator](/utils/qrcode/)
