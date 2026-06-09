@@ -118,6 +118,8 @@ details {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: space-evenly;
+  border-top: 1px #aaaaaa solid;
+  padding-top: 16px;
 
   button {
     width: 216px;
@@ -135,6 +137,10 @@ details {
     margin: auto;
     max-width: 300px;
     max-height: 300px;
+  }
+
+  p {
+    display: none;
   }
 }
 
@@ -159,5 +165,16 @@ body.fullscreen .app {
 
   #result {
     display: block !important;
+
+    svg,
+    img {
+      max-width: calc(100vw - 48px);
+      max-height: calc(100vh - 132px);
+    }
+
+    p {
+      display: block;
+      text-align: center;
+    }
   }
 }

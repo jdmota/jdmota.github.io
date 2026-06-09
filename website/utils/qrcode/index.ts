@@ -1,4 +1,4 @@
-import qrcode, { type QRCodeRenderersOptions } from "qrcode";
+import qrcode, { type QRCodeErrorCorrectionLevel } from "qrcode";
 import chroma from "chroma-js";
 import { scaleElement } from "./scale-that-svg";
 
@@ -32,6 +32,7 @@ const elems = {
   downloadSvg: document.getElementById("download-svg") as HTMLButtonElement,
   copyPng: document.getElementById("copy-png") as HTMLButtonElement,
   copySvg: document.getElementById("copy-svg") as HTMLButtonElement,
+  openInTab: document.getElementById("open-in-tab") as HTMLButtonElement,
   resultButtons: document.getElementById("result-buttons") as HTMLDivElement,
   result: document.getElementById("result") as HTMLDivElement,
   tooltip: document.getElementById("tooltip") as HTMLDivElement,
@@ -64,17 +65,17 @@ async function generate() {
   try {
     const text = elems.text.value.trim();
 
-    const errorCorrectionLevel = elems.errorLevel
-      .value as QRCodeRenderersOptions["errorCorrectionLevel"];
+    const errorCorrectionLevel = (elems.errorLevel.value ||
+      "high") as QRCodeErrorCorrectionLevel;
 
-    const color: QRCodeRenderersOptions["color"] = {
+    const color = {
       dark: colorHex(
         elems.darkColor.value.trim() || DEFAULT_QRCODE_OPTS.color.dark
       ),
       light: colorHex(
         elems.lightColor.value.trim() || DEFAULT_QRCODE_OPTS.color.light
       ),
-    };
+    } as const;
 
     const [originalSvg, png] = await Promise.all([
       qrcode.toString(text, {
@@ -94,7 +95,7 @@ async function generate() {
     const logoText = elems.logoText.value.trim();
     if (logoText) {
       const svg = addLogo(originalSvg, logoText);
-      elems.result.innerHTML = svg;
+      elems.result.innerHTML = `${svg}<p>${text}</p>`;
       elems.downloadPng.disabled = true;
       elems.downloadPng.onclick = () => {};
       elems.downloadSvg.onclick = () => download(svgToDataURL(svg), "svg");
@@ -103,7 +104,7 @@ async function generate() {
       elems.copySvg.onclick = () => clipboardText(svg);
     } else {
       const svg = originalSvg;
-      elems.result.innerHTML = `<img src="${png}" />`;
+      elems.result.innerHTML = `<img src="${png}" /><p>${text}</p>`;
       elems.downloadPng.disabled = false;
       elems.downloadPng.onclick = () => download(png, "png");
       elems.downloadSvg.onclick = () => download(svgToDataURL(svg), "svg");
@@ -111,6 +112,21 @@ async function generate() {
       elems.copyPng.onclick = () => clipboardPNG(png);
       elems.copySvg.onclick = () => clipboardText(svg);
     }
+
+    elems.openInTab.onclick = () => {
+      const url = new URL(`/utils/qrcode/`, location.origin);
+      url.searchParams.set("fullscreen", "");
+      url.searchParams.set("text", text);
+      url.searchParams.set("logo", logoText);
+      url.searchParams.set("errorLevel", errorCorrectionLevel);
+      url.searchParams.set("darkColor", color.dark);
+      url.searchParams.set("lightColor", color.light);
+      const anchor = document.createElement("a");
+      anchor.target = "_blank";
+      anchor.href = url.href;
+      anchor.click();
+    };
+
     elems.resultButtons.style.display = "";
   } catch (error: any) {
     elems.result.innerHTML = `Error: ${error.message}`;
@@ -258,10 +274,23 @@ function dataURItoBlob(dataURI: string) {
 }
 
 const searchParams = new URLSearchParams(location.search);
-const textQuery = searchParams.get("text");
+const textQuery = searchParams.get("text")?.trim();
+
+function setInputValue(
+  elem: HTMLInputElement | HTMLSelectElement,
+  value: string | null | undefined
+) {
+  if (value) {
+    elem.value = value;
+  }
+}
 
 if (textQuery) {
-  elems.text.value = textQuery;
+  setInputValue(elems.text, textQuery);
+  setInputValue(elems.logoText, searchParams.get("logo"));
+  setInputValue(elems.errorLevel, searchParams.get("errorLevel"));
+  setInputValue(elems.darkColor, searchParams.get("darkColor"));
+  setInputValue(elems.lightColor, searchParams.get("lightColor"));
   generate();
 
   if (searchParams.has("fullscreen")) {
@@ -271,9 +300,3 @@ if (textQuery) {
   elems.text.focus();
   elems.resultButtons.style.display = "none";
 }
-
-window.addEventListener("keydown", evt => {
-  if (evt.key === "Escape") {
-    document.body.classList.remove("fullscreen");
-  }
-});
