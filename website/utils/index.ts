@@ -38,6 +38,11 @@ const awesomeUtils: readonly Util[] = [
     url: "https://icones.js.org/",
   },
   {
+    title: "Anywhere on Earth time",
+    desc: "By Time.is",
+    url: "https://time.is/Anywhere_on_Earth",
+  },
+  {
     title: "VERT",
     desc: "An awesome file converter.",
     url: "https://vert.sh/",
