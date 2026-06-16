@@ -14,7 +14,7 @@ function renderMarkdown(md: string) {
       matcher(href: string) {
         return href.match(/^https?:\/\//) || href.startsWith("/material/");
       },
-      attrs: { target: "_blank", rel: "noopener" },
+      attrs: { target: "_blank", rel: "noopener noreferrer" },
     })
     .use(markdownitanchor, { slugify })
     .render(md);

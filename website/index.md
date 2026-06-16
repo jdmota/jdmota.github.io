@@ -30,6 +30,7 @@ In particular, I delight in creating libraries and frameworks for Web and NodeJS
 
 ## 📂 Material
 
+- [Iris Workshop 2026 Slides: "A Separation Logic Framework for Asynchronous Programming"](/material/iris-workshop-2026-slides.pdf)
 - RADICAL 2025: "A type system framework for safe (a)synchronous concurrent programming"
   - [Slides](/material/radical-2025-slides.pdf)
   - [Presentation notes](https://github.com/jdmota/jdmota.github.io/blob/dev/website/public/material/radical-2025-notes.md)
@@ -42,7 +43,8 @@ In particular, I delight in creating libraries and frameworks for Web and NodeJS
 
 ## 🎤 Workshops and Conferences
 
-- "A type system framework for safe (a)synchronous concurrent programming" presented at [RADICAL 2025](https://sites.google.com/site/radicalconcur/Home/program)
+- "A Separation Logic Framework for Asynchronous Programming" presented at [Iris Workshop 2026](https://iris-project.org/workshop-2026/)
+- "A type system framework for safe (a)synchronous concurrent programming" presented at [RADICAL 2025](https://sites.google.com/site/radicalconcur/previous-editions/radical-2025/program)
 - Paper ["Behavioural Up/down Casting For Statically Typed Languages"](https://doi.org/10.4230/LIPIcs.ECOOP.2024.5) presented at [ECOOP 2024](https://2024.ecoop.org/details/ecoop-2024-papers/5/Behavioral-up-down-casting-for-statically-typed-languages)
 - Poster "Coping with shared mutable state in a typestate-oriented concurrent language" presented at [PLDI 2024 Student Research Competition](https://pldi24.sigplan.org/details/pldi-2024-src/9/Coping-with-shared-mutable-state-in-a-typestate-oriented-concurrent-language)
 - Tutorial "JaTyC - Java Typestate Checker" presented at [BehAPI Tutorials (Satellite Workshop of DisCoTec 2023)](https://www.discotec.org/2023/programme#friday-june-23rd)
